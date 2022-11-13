@@ -1,0 +1,18 @@
+#arriba{
+padding-bottom: 3%;
+background-color: cadetblue;
+
+padding-top: 1.5%;
+
+}
+#colorbtn{
+    background-color: #F0A868;
+    outline: #F0A868;
+}
+#izquierda{
+    text-align: right;
+}
+body{
+    background-color: #FFE8C2;
+
+}

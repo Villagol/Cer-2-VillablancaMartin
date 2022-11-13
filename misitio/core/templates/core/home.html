@@ -1,0 +1,105 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{%static 'core/css/bootstrap.css'%}">
+  <link rel="stylesheet" href="{%static 'core/css/estilos.css'%}">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" id="arriba">
+      <div class="col-md-1"><img src="{%static 'core/img/iconocaja.png' %}" alt=""> </div>
+      <div class="col-md-8">
+        <h3>Bienvenidos al registro de encomienda</h3>
+      </div>
+      <div class="col-md-3" id="izquierda"> <a href="{%url 'admin:index'%}"> <button id="colorbtn"
+            class="btn btn-outline-dark">Iniciar Sesión </button> </a></div>
+    </div>
+    <div class="row" id="fondo">
+      <div class="col-md-4">
+        <br><br><br>
+        <div class="card" style="width: 18rem;">
+          <img src="{%static 'core/img/recibir.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Recibir correspondencia</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, iste.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <br><br><br>
+        <div class="card" style="width: 18rem;">
+          <img src="{%static 'core/img/cajaaaas.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Registrar Correspondencia</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <br><br><br>
+        <div class="card" style="width: 18rem;">
+          <img src="{%static 'core/img/cajas.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Entregar Correspondencia</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, saepe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <h1>Registro de correspondencia</h1>
+
+      <div class="col-md-10"> </div>
+    </div>
+    <form class="d-flex col-md-3" method="get">
+      <input class="form-control me-2" type="search" placeholder="N° Residencia" name="buscar">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    <br><br>
+    <div class="col-md-8">
+      <table class="table table-bordered border-primary">
+        <thead>
+          <tr>
+            <th scope="col">Residencia N°</th>
+            <th scope="col">Fecha recepción</th>
+            <th scope="col">Conserje</th>
+            <th scope="col">Remitente</th>
+            <th scope="col">Destinatario</th>
+            <th scope="col">Estado</th>
+
+          </tr>
+        </thead>
+        {%for i in correspondencia%}
+        <tbody>
+          <tr>
+            <td scope"col">{{i.nroresidencia}} </td>
+            <td scope"col">{{i.fecha_recepcion}} </td>
+            <td scope"col">{{i.conserje}} </td>
+            <td scope"col">{{i.remitente}} </td>
+            <td scope"col">{{i.destinatario}} </td>
+            <td scope"col">{{i.estado}} </td>
+
+            {% endfor %}
+
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+  </div>
+
+
+
+</body>
+
+</html>
